@@ -1,3 +1,5 @@
+[**Live Demo**](https://humanizer-demo-app.windsurf.build/)
+
 # Getting Started with Humanizer App
 
 A web application for transforming AI-generated or robotic text into natural, human-sounding writing using advanced AI models. The app manages user credits, project history, and supports file imports for seamless workflow.
