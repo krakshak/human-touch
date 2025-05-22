@@ -1,49 +1,101 @@
-# Getting Started with Create React App
+# Getting Started with Create Humanizer App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application for transforming AI-generated or robotic text into natural, human-sounding writing using advanced AI models. The app manages user credits, project history, and supports file imports for seamless workflow.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
+- [Pages & Functionality](#pages--functionality)
+- [Tech Stack](#tech-stack)
+- [Setup & Usage](#setup--usage)
+- [Deployment](#deployment)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Pages & Functionality
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Home (`/`)
+- **Input & Output:** Enter text to be "humanized" and view the result.
+- **Modes:** Choose between API mode (live credits) or Demo mode.
+- **Credits Tracker:** Shows credits left and total credits used.
+- **Import:** Automatically loads text imported from Dashboard uploads.
+- **Buy Credits:** Button to purchase more credits.
 
-### `npm test`
+### Dashboard (`/dashboard`)
+- **Project History:** View all previously humanized texts.
+- **File Uploads:** Upload documents and import their contents to the Home page for humanization.
+- **Import to Humanizer:** Button for each upload to send its content to the Home page input.
+- **Credits Overview:** See your credits usage and history.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Pricing (`/pricing`)
+- **Plan Information:** View available credit packages and pricing.
+- **Purchase:** Link to payment page.
 
-### `npm run build`
+### Payment (`/payment`)
+- **Checkout:** Complete payment for more credits.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Login / Signup (`/login`, `/signup`)
+- **Authentication:** Register or log in to your account.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Contact (`/contact`)
+- **Support:** Contact form for user support or feedback.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Frontend
+- **React** (Create React App)
+- **CSS** (custom styles)
+- **React Router** (page navigation)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Backend
+- **Supabase** (user authentication, database for credits, projects, and history)
+- **Undetectable AI API** (for humanizing text)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Deployment
+- **Netlify** (static site hosting and CI/CD)
+- **windsurf.build** (Netlify integration for automated deployments)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Setup & Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+2. **Configure secrets:**
+   - Copy `src/secrets.js.example` to `src/secrets.js` and fill in your API keys.
+   - Set up your Supabase project and update credentials in `src/supabaseClient.js`.
+3. **Run locally:**
+   ```sh
+   npm start
+   ```
+   The app will be available at [http://localhost:3000](http://localhost:3000).
+4. **Build for production:**
+   ```sh
+   npm run build
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## Deployment
+
+- The app is configured for Netlify deployment. Use the `netlify.toml` for build settings.
+- Deploy manually via Netlify UI or use CLI:
+  ```sh
+  npm install -g netlify-cli
+  netlify deploy
+  ```
+- Or use the automated deployment via windsurf.build (see project instructions).
+
+---
+
+## Notes
+- Make sure to set all required environment variables (API keys, Supabase credentials) in Netlify for production.
+- Credits and user data are managed securely in Supabase.
+- For any issues or contributions, please open an issue or pull request.
 
 ### Code Splitting
 
