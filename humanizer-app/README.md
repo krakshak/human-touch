@@ -1,4 +1,4 @@
-[**Live Demo**](https://humanizer-demo-app.windsurf.build/): https://humanizer-demo-app.windsurf.build/
+**Live Demo**: https://humanizer-demo-app.windsurf.build/
 
 # Getting Started with Humanizer App
 
